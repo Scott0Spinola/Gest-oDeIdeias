@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GestãoIdeas</name>
+    </assembly>
+    <members>
+        <member name="M:GestãoIdeas.Controllers.IdeaEndPoints.GetAllIdeas(GestãoIdeas.Data.IdeaContext,Microsoft.Extensions.Logging.ILogger{GestãoIdeas.Data.IdeaContext})">
+            <summary>
+            Gets all ideas from the database.
+            </summary>
+        </member>
+        <member name="M:GestãoIdeas.Controllers.IdeaEndPoints.GetIdIdeas(System.Int32,GestãoIdeas.Data.IdeaContext,Microsoft.Extensions.Logging.ILogger{GestãoIdeas.Data.IdeaContext})">
+            <summary>
+            Gets a single idea by its identifier.
+            </summary>
+        </member>
+        <member name="M:GestãoIdeas.Controllers.IdeaEndPoints.GetPriority(System.Int32,GestãoIdeas.Data.IdeaContext,Microsoft.Extensions.Logging.ILogger{GestãoIdeas.Data.IdeaContext})">
+            <summary>
+            Gets all ideas that match the specified priority.
+            </summary>
+        </member>
+        <member name="M:GestãoIdeas.Controllers.IdeaEndPoints.CreateIdea(GestãoIdeas.DTOs.CreateIdea,GestãoIdeas.Data.IdeaContext,Microsoft.Extensions.Logging.ILogger{GestãoIdeas.Data.IdeaContext})">
+            <summary>
+            Creates a new idea.
+            </summary>
+        </member>
+        <member name="M:GestãoIdeas.Controllers.IdeaEndPoints.UpdateIdea(System.Int32,GestãoIdeas.DTOs.UpdateIdea,GestãoIdeas.Data.IdeaContext,Microsoft.Extensions.Logging.ILogger{GestãoIdeas.Data.IdeaContext})">
+            <summary>
+            Updates an existing idea.
+            </summary>
+        </member>
+        <member name="M:GestãoIdeas.Controllers.IdeaEndPoints.DeleteIdea(System.Int32,GestãoIdeas.Data.IdeaContext,Microsoft.Extensions.Logging.ILogger{GestãoIdeas.Data.IdeaContext})">
+            <summary>
+            Deletes an idea by its identifier.
+            </summary>
+        </member>
+        <member name="T:GestãoIdeas.Data.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:GestãoIdeas.Data.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GestãoIdeas.Data.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GestãoIdeas.Data.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

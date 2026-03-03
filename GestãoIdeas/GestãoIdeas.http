@@ -1,0 +1,6 @@
+@GestãoIdeas_HostAddress = http://localhost:5122
+
+GET {{GestãoIdeas_HostAddress}}/ideas
+Accept: application/json
+
+###
