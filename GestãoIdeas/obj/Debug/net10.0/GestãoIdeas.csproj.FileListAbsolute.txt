@@ -152,3 +152,4 @@ C:\Users\spino\Desktop\GestãoDeIdeias\GestãoIdeas\bin\Debug\net10.0\Swashbuckl
 C:\Users\spino\Desktop\GestãoDeIdeias\GestãoIdeas\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\spino\Desktop\GestãoDeIdeias\GestãoIdeas\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\spino\Desktop\GestãoDeIdeias\GestãoIdeas\obj\Debug\net10.0\GestãoIdeas.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\spino\Desktop\GestãoDeIdeias\GestãoIdeas\obj\Debug\net10.0\GestãoIdeas.sourcelink.json

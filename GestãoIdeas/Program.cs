@@ -27,24 +27,10 @@ if (app.Environment.IsDevelopment())
 // Ensure database is created/migrated and seed initial data
 using (var scope = app.Services.CreateScope())
 {
-	var db = scope.ServiceProvider.GetRequiredService<IdeaContext>();
-	db.Database.Migrate();
+    var db = scope.ServiceProvider.GetRequiredService<IdeaContext>();
+    db.Database.Migrate();
 
-	// Update ideas older than one month that are not completed to ABANDONED
-	var cutoffDate = DateTime.UtcNow.AddMonths(-1);
-	var outdatedIdeas = db.Ideas
-		.Where(i => i.CreatedAt <= cutoffDate && i.State != IdeaState.COMPLETED && i.State != IdeaState.ABANDONED)
-		.ToList();
-
-	if (outdatedIdeas.Count > 0)
-	{
-		foreach (var idea in outdatedIdeas)
-		{
-			idea.State = IdeaState.ABANDONED;
-		}
-
-		db.SaveChanges();
-	}
+	IdeaMaintenanceService.UpdateOutdatedIdeas(db, DateTime.UtcNow);
 
 	if (!db.Ideas.Any())
 	{
@@ -83,4 +69,7 @@ app.Use(async (context, next) =>
 app.MapIdeasEndPoints();
 
 app.Run();
+
+// Expose Program class for WebApplicationFactory<T> in tests
+public partial class Program { }
 
