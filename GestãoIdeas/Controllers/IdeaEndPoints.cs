@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.IO;
+using GestãoIdeas.Services;
 
 namespace GestãoIdeas.Controllers;
 
@@ -62,14 +63,18 @@ public static class IdeaEndPoints
     /// <summary>
     /// Gets all ideas from the database.
     /// </summary>
-    private static async Task<IResult> GetAllIdeas(IdeaContext context, ILogger<IdeaContext> logger)
+    private static async Task<IResult> GetAllIdeas(IdeaContext context, ILogger<IdeaContext> logger, IAdviceService adviceService)
     {
         try
         {
            
             var ideas = await context.Ideas.ToListAsync();
+            var ideaDtos = ideas.Select(i => new IdeaDTO(i)).ToList();
+            var advice = await adviceService.GetRandomAdviceAsync();
+            var response = new IdeasWithAdviceResponse(ideaDtos, advice);
+           
             LogToFile("INFO", $"Returned {ideas.Count} ideas");
-            return Results.Ok(ideas);
+            return Results.Ok(response);
         }
         catch (Exception ex)
         {

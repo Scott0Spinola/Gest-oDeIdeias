@@ -4,7 +4,7 @@
         <name>GestãoIdeas</name>
     </assembly>
     <members>
-        <member name="M:GestãoIdeas.Controllers.IdeaEndPoints.GetAllIdeas(GestãoIdeas.Data.IdeaContext,Microsoft.Extensions.Logging.ILogger{GestãoIdeas.Data.IdeaContext})">
+        <member name="M:GestãoIdeas.Controllers.IdeaEndPoints.GetAllIdeas(GestãoIdeas.Data.IdeaContext,Microsoft.Extensions.Logging.ILogger{GestãoIdeas.Data.IdeaContext},GestãoIdeas.Services.IAdviceService)">
             <summary>
             Gets all ideas from the database.
             </summary>

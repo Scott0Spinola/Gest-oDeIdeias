@@ -1,8 +1,9 @@
 using GestãoIdeas.Controllers;
 using GestãoIdeas.Data;
 using GestãoIdeas.Models;
+using GestãoIdeas.DTOs;
+using GestãoIdeas.Services;
 using Microsoft.EntityFrameworkCore;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddValidation();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddHttpClient<IAdviceService, AdviceService>();
+
 
 builder.Services.AddDbContext<IdeaContext>(options =>
 {
@@ -70,6 +74,4 @@ app.MapIdeasEndPoints();
 
 app.Run();
 
-// Expose Program class for WebApplicationFactory<T> in tests
-public partial class Program { }
 
